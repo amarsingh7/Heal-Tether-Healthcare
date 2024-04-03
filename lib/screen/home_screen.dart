@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        backgroundColor: Color(0xFF012B5B),
         title: const Text('Home Screen'),
       ),
       body: Padding(
@@ -45,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Form(
           key: _formKey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
                 controller: _nameController,
@@ -55,9 +54,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                   return null;
                 },
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Name',
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color(0xFF012B5B), width: 1.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color(0xFF012B5B), width: 2.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               TextFormField(
                 controller: _emailController,
@@ -67,13 +89,35 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                   return null;
                 },
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color(0xFF012B5B), width: 1.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color(0xFF012B5B), width: 2.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF012B5B)),
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? true) {
                         // Form is validated, process the data
