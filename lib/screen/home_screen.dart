@@ -11,6 +11,9 @@ class _HomeScreenState extends State<HomeScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final RegExp _emailRegExp = RegExp(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  );
 
   Future<void> _submit() {
     return showDialog(
@@ -38,6 +41,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xFF012B5B),
         title: const Text('Home Screen'),
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -86,6 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Please enter your email';
+                  }
+                  if (!_emailRegExp.hasMatch(value!)) {
+                    return 'Please enter a valid email';
                   }
                   return null;
                 },

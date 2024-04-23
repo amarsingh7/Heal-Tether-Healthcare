@@ -10,13 +10,12 @@ class StartScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFF012B5B),
         automaticallyImplyLeading: false,
+        centerTitle: true,
         title: const Text('Start Screen'),
       ),
       body: Center(
         child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF012B5B)
-          ),
+          style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF012B5B)),
           onPressed: () {
             Navigator.push(
               context,
