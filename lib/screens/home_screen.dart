@@ -299,16 +299,11 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color.fromARGB(255, 235, 232, 228),
         elevation: 0,
         title: const Text(
-          'Add Expense',
+          'Expense Tracker',
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
         automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
+        
         centerTitle: true,
         actions: [
           // Show total count badge
@@ -377,11 +372,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.dashboard),
-                        title: Text('Dashboard',
+                        leading: Icon(Icons.dashboard, color: Colors.white),
+                        title: const Text('Dashboard',
                           style: TextStyle(
-                            color: const Color.fromARGB(209, 241, 39, 39),
+                            color: Color.fromARGB(255, 28, 26, 26),
                             fontSize: 21,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         onTap: () {
@@ -618,7 +614,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               }
                             },
                             child: _isLoading
-                                ? SizedBox(
+                                ? const SizedBox(
                                     height: 24,
                                     width: 24,
                                     child: CircularProgressIndicator(
@@ -626,7 +622,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       strokeWidth: 2,
                                     ),
                                   )
-                                : Row(
+                                : const Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(Icons.save, size: 24),
@@ -635,7 +631,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'Save Expense',
                                         style: TextStyle(
                                           fontSize: 18,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.white
                                         ),
                                       ),
                                     ],
@@ -662,8 +659,9 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           backgroundColor: Color.fromARGB(255, 232, 129, 18),
           icon: Icon(Icons.list),
-          label: Text('View All'),
+          label: const Text('View All', style: TextStyle(color: Colors.white),
         ),
+        )
       ),
     );
   }

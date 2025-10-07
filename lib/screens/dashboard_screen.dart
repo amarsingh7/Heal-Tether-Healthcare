@@ -146,12 +146,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     return Scaffold(
       backgroundColor: Colors.grey[50],
+      
       appBar: AppBar(
         backgroundColor: Color(0xFF012B5B),
         elevation: 0,
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+
         title: const Text(
           'Dashboard',
-          style: TextStyle(fontWeight: FontWeight.w600),
+          style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
         ),
         centerTitle: true,
       ),
