@@ -499,7 +499,12 @@ class _ExpenseListScreenState extends State<ExpenseListScreen> {
                   });
                 },
               )
-            : null,
+            : IconButton(
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
         actions: [
           if (!_isSearching) ...[
             IconButton(
