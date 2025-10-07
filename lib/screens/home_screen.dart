@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/expense.dart';
 import '../services/expense_service.dart';
+import 'expense_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -633,6 +634,20 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 40.0), // add bottom margin
+        child: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ExpenseListScreen()),
+            ).then((_) => _loadExpensesCount()); // Refresh count when returning
+          },
+          backgroundColor: Color.fromARGB(255, 232, 129, 18),
+          icon: Icon(Icons.list),
+          label: Text('View All'),
+        ),
       ),
     );
   }
