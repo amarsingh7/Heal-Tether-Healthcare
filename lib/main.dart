@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_tether_task/screen/home_screen.dart';
+import 'package:heal_tether_task/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
