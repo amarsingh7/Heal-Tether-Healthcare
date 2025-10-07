@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_tether_task/screen/start_screen.dart';
+import 'package:heal_tether_task/screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Form Example',
+      title: 'Personal Expense Tracker',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StartScreen(),
+      home: const HomeScreen(),
     );
   }
 }
