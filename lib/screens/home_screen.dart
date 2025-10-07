@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import '../models/expense.dart';
 import '../services/expense_service.dart';
 import 'expense_list_screen.dart';
+import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -295,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        backgroundColor: Color(0xFF012B5B),
+        backgroundColor: Color.fromARGB(255, 235, 232, 228),
         elevation: 0,
         title: const Text(
           'Add Expense',
@@ -349,7 +350,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: double.infinity,
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Color(0xFF012B5B),
+                    color: Color.fromARGB(255, 68, 133, 207),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30),
@@ -375,6 +376,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 14,
                         ),
                       ),
+                      ListTile(
+                        leading: Icon(Icons.dashboard),
+                        title: Text('Dashboard',
+                          style: TextStyle(
+                            color: const Color.fromARGB(209, 241, 39, 39),
+                            fontSize: 21,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DashboardScreen()),
+                          );
+                        },
+                      )
                     ],
                   ),
                 ),
@@ -590,7 +606,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 55,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF012B5B),
+                              backgroundColor: Color.fromARGB(255, 8, 228, 74),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
